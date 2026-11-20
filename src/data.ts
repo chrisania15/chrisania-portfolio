@@ -10,7 +10,7 @@ export const roles = ['UI/UX Designer', 'Product Designer', 'Data Visualization'
 export const sections = ['home', 'about', 'projects', 'experience', 'skills', 'contact']
 
 export type Row = { label: string; text?: string; list?: string[] }
-export type Project = { id: 'queueless' | 'travel' | 'bluetooth' | 'cisco' | 'design'; cat: string; title: string; summary: string; status?: string; rows: Row[]; tech: string[]; github?: string }
+export type Project = { id: 'queueless' | 'travel' | 'bluetooth' | 'cisco' | 'design'; cat: string; title: string; summary: string; status?: string; rows: Row[]; tech: string[]; github?: string; image?: { src: string; alt: string; caption: string; w: number; h: number } }
 export const projects: Project[] = [
   { id: 'queueless', cat: 'Full-stack web app', title: 'QueueLess', summary: 'Smart queue and appointment management for educational institutions.', status: 'In development',
     rows: [
@@ -32,7 +32,8 @@ export const projects: Project[] = [
     tech: ['Microcontroller', 'Relay modules', 'Bluetooth module', 'Android'] },
   { id: 'cisco', cat: 'Networking', title: 'Cisco Networking Stream Project', summary: 'Network architectures designed and simulated in Packet Tracer.',
     rows: [{ label: 'My contribution', list: ['Designed and simulated network architectures.', 'Implemented routing, switching and IP addressing.'] }],
-    tech: ['Cisco Packet Tracer'], github: 'https://github.com/chrisania15/cisco-networking-project' },
+    tech: ['Cisco Packet Tracer'], github: 'https://github.com/chrisania15/cisco-networking-project',
+    image: { src: '/cisco-topology.png', w: 1200, h: 429, alt: 'Cisco Packet Tracer topology: three 2811 routers connected to each other, with Router0 serving a switch, a PC and a laptop, and Router1 serving a switch, a PC and a server.', caption: 'Topology from my Packet Tracer project: three routers linked together, with a PC and laptop on one side and a PC and server on the other.' } },
   { id: 'design', cat: 'Visual design', title: 'Identity & Print Design', summary: 'Visiting cards and identity cards.',
     rows: [{ label: 'My contribution', text: 'Applied typography, color theory and layout principles to cards that need to be read quickly.' }],
     tech: ['Figma', 'Canva', 'Adobe Photoshop'] },
