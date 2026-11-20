@@ -18,6 +18,7 @@ export default function Projects() {
               <div key={r.label}><dt>{r.label}</dt>
                 <dd>{r.text}{r.list && <ul>{r.list.map(x => <li key={x}>{x}</li>)}</ul>}</dd></div>
             ))}
+            {p.image && <figure className="shot"><img src={p.image.src} alt={p.image.alt} width={p.image.w} height={p.image.h} loading="lazy" /><figcaption>{p.image.caption}</figcaption></figure>}
             <div className="tech">{p.tech.map(t => <span key={t}>{t}</span>)}</div>
             {p.github && <div><a className="btn sec" href={p.github} target="_blank" rel="noopener noreferrer">View on GitHub</a></div>}
             {p.id in demos && demos[p.id as keyof typeof demos]}
